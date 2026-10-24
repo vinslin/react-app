@@ -1,3 +1,5 @@
+import ChildChild1 from "./child-child-component/childchild1";
+
 
 function Child2(props){
 
@@ -18,11 +20,14 @@ function Child2(props){
                     <td>{user.id}</td>
                     <td>{user.name}</td>
                     <td>{user.age}</td>
+                    <td><button onClick={() => props.deleteUser(user.id)}>Delete</button></td>
                 </tr>
              )
             }
         </tbody>
         </table>
+        <h2>childchild1</h2>
+           <ChildChild1 msg={props.msg} users={props.users} deleteUser={props.deleteUser}/>
     </>
     )
 }

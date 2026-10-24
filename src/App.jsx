@@ -69,7 +69,7 @@ function App() {
   return (
     <>
        <div>
-        <Parent/>
+        <Parent lists={users} deleteList={deleteUser}/>
       </div>
       <section id="center">
         <div className="hero">
