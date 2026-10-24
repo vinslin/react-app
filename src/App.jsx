@@ -4,7 +4,11 @@ import heroImg from './assets/hero.png';
 import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
 import Parent  from './components/parent';
+import UserContext from './context/UserContext';
 import './App.css';
+import NavBar from './BseeComponents/navbar';
+import Heading from './BseeComponents/heading';
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,7 +16,8 @@ function App() {
   const [age, setAge] = useState('');
   const inputRef = useRef(null);
   const countRef =useRef(0);
-
+  const [nameContext,setNameContext] = useState("max");
+  
   function increseRef(){
     countRef.current +=1;
     console.log(countRef.current);
@@ -68,6 +73,14 @@ function App() {
 
   return (
     <>
+    <div>
+      <UserContext.Provider value={{nameContext,setNameContext}}>
+        <Heading></Heading>
+        <p>navbar</p>
+        <NavBar></NavBar>
+
+      </UserContext.Provider>
+    </div>
        <div>
         <Parent/>
       </div>
